@@ -1,16 +1,18 @@
 # git_cmd
 A little repo for the trouble I have for the complex git command.
 
-# Squash de Commits Git
+----
+
+## Squash de Commits Git
 
 Ce guide explique comment squash (fusionner) plusieurs commits en un seul dans Git, tout en préservant certains commits récents.
 
-## Prérequis
+### Prérequis
 
 - Git installé sur votre système
 - Accès en écriture au dépôt distant
 
-## Étapes
+### Étapes
 
 <kbd> <img src="./images/gloga.png" alt="gloga" width="500" height="auto" style="border-radius:50%"/> </kbd>
 
@@ -62,32 +64,37 @@ Dans l'éditeur qui s'ouvre, modifiez la liste comme suit :
   `git push --force origin branch`
 
 
-## Avertissements
+### Avertissements
 
 - Cette opération modifie l'historique Git
 - L'utilisation de `--force` écrase l'historique distant
 - Résolvez manuellement les conflits éventuels
 
-## En cas de problème
+### En cas de problème
 
   Pour annuler le rebase : `git rebase --abort`
   
-## Résultat
+### Résultat
 
 Après ces étapes, les commits entre 892f40a et 8eb56b9 (inclus) seront fusionnés en un seul, tandis que les 5 derniers commits resteront inchangés.
 
-## recuperer un commit avec reflog
+### recuperer un commit avec reflog
 
-# Récupération de Commits Perdus avec Git Reflog
+----
+
+## Récupération de Commits Perdus avec Git Reflog
 
 Ce guide explique comment utiliser `git reflog` pour récupérer des commits perdus dans Git.
 
-## Prérequis
+### Prérequis
 
 - Git installé sur votre système
 - Un dépôt Git avec des commits perdus à récupérer
 
-## Étapes de Récupération
+### Étapes de Récupération
+
+<kbd> <img src="./images/gb-d.png" alt="gloga" width="500" height="auto" style="border-radius:50%"/> </kbd>
+
 
 1. **Afficher le Reflog**
 
@@ -111,40 +118,37 @@ Remplacez `<nom-de-branche>` par un nom approprié et `<hash-du-commit>` par le 
 
 Vérifiez que la nouvelle branche contient bien le commit récupéré.
 
-## Exemple
+### Exemple
 
-<<<<<<< HEAD
-```
-git reflog
-=======
-`
-git reflog§
->>>>>>> 85b21d0 (add image)
-# Identifiez le hash du commit perdu, par exemple abc123
+  `git reflog`
+
+### Identifiez le hash du commit perdu, par exemple abc123
 
   `git branch recuperation abc123`
 
   `git log recuperation`
 
-# Vérifiez que le commit est présent dans la nouvelle branche
+### Vérifiez que le commit est présent dans la nouvelle branche
 
+----
 
-# Guide de Suppression de Branche Git
+## Guide de Suppression de Branche Git
 
 Ce guide explique comment supprimer définitivement une branche Git, à la fois localement et sur le dépôt distant.
 
-## Étapes de Suppression
+### Étapes de Suppression
 
-### 1. Suppression de la Branche Locale
+1. Suppression de la Branche Locale
 
 
   `git branch -D 5_devTuto`
 
 Note : L'option -D force la suppression même si la branche n'a pas été fusionnée.
+
 2. Suppression de la Branche Distante
 
 
-`git push origin --delete 5_devTuto`
+  `git push origin --delete 5_devTuto`
 
 3. Vérification
 Après la suppression, vérifiez que la branche a bien été supprimée :
@@ -152,7 +156,7 @@ Après la suppression, vérifiez que la branche a bien été supprimée :
     Pour les branches locales :
 
     
-    `git branch -a`
+  `git branch -a`
 
 Pour les branches distantes :
 
