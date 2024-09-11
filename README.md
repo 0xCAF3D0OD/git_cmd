@@ -113,8 +113,13 @@ Vérifiez que la nouvelle branche contient bien le commit récupéré.
 
 ## Exemple
 
+<<<<<<< HEAD
 ```
 git reflog
+=======
+`
+git reflog§
+>>>>>>> 85b21d0 (add image)
 # Identifiez le hash du commit perdu, par exemple abc123
 
   `git branch recuperation abc123`
